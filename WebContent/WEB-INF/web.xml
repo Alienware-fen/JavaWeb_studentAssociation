@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>StudentAssociation</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 2019 4 28 登录-->
+  <servlet>
+	<servlet-name>LoginServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/Sign In</url-pattern> <!-- 要调取的链接 -->
+  </servlet-mapping>
+  
+  <!-- 20190507 权限-->
+  <filter>
+	<filter-name>AuthorityFilter</filter-name>
+    <filter-class>cn.edu.lingnan.filter.AuthorityFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>AuthorityFilter</filter-name>
+	<url-pattern>/admin/*</url-pattern> <!-- 要过滤的东西 -->
+  </filter-mapping>
+  
+  <!-- 20190508 注销-->
+  <servlet>
+	<servlet-name>LoginOutServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.LoginOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>LoginOutServlet</servlet-name>
+	<url-pattern>/loginout</url-pattern> <!-- 要调取的链接 -->
+  </servlet-mapping>
+  
+  <!-- 2019 5 12 查找全部-->
+  <servlet>
+	<servlet-name>AllStudentServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.AllStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AllStudentServlet</servlet-name>
+	<url-pattern>/admin/findAllStu</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 5 14 更新-->
+  <servlet>
+	<servlet-name>UpdateStuServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.UpdateStuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdateStuServlet</servlet-name>
+	<url-pattern>/admin/updateStu</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 5 16 删除-->
+  <servlet>
+	<servlet-name>DeleteStuServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.DeleteStuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>DeleteStuServlet</servlet-name>
+	<url-pattern>/admin/deleteStu</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 2019 5 16 注册-->
+  <servlet>
+	<servlet-name>RegisterServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>RegisterServlet</servlet-name>
+	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 6  18 查找全部社团信息-->
+  <servlet>
+	<servlet-name>AllAssociationServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.AllAssociationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AllAssociationServlet</servlet-name>
+	<url-pattern>/admin/findAllAso</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 6 18 修改社团信息-->
+  <servlet>
+	<servlet-name>UpdateAsoServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.UpdateAsoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdateAsoServlet</servlet-name>
+	<url-pattern>/admin/updateAso</url-pattern>
+  </servlet-mapping>
+	
+<!-- 2019 6 18 删除社团信息-->
+  <servlet>
+	<servlet-name>DeleteAsoServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.DeleteAsoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>DeleteAsoServlet</servlet-name>
+	<url-pattern>/admin/deleteAso</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 6 18 查找学院的全部信息-->
+  <servlet>
+	<servlet-name>AllAcademicServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.AllAcademicServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AllAcademicServlet</servlet-name>
+	<url-pattern>/admin/findAllAca</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 2019 6 18 修改学院信息-->
+  <servlet>
+	<servlet-name>UpdateAcaServlet</servlet-name> 
+	<servlet-class>cn.edu.lingnan.servlet.UpdateAcaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdateAcaServlet</servlet-name>
+	<url-pattern>/admin/updateAca</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
